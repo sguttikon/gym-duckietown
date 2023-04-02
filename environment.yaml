@@ -1,16 +1,22 @@
 name: gym-duckietown
 channels:
     - pytorch
+    - nvidia
     - defaults
+    - conda-forge
 dependencies:
-    - python=3.6
-    - pytorch=0.3
-    - torchvision
+    - python=3.9
+    - pytorch=2.0.0
+    - torchvision=0.15.0
+    - pytorch-cuda=11.8
     - pyzmq
     - numpy
-    - pyyaml=3.12
+    - pyyaml
+    - libstdcxx-ng
     - pip:
-        - gym
-        - pyglet
+        - gym==0.26.2
+        - pyglet==1.5.27
         - opencv-python
         - scikit-image
+        - duckietown-world-daffy
+        - carnivalmirror==0.6.2
