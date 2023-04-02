@@ -6,14 +6,17 @@ channels:
     - conda-forge
 dependencies:
     - python=3.9
-    - pytorch=2.0.0
-    - torchvision=0.15.0
+    - pytorch=1.13.1
+    - torchvision=0.14.1
+    - torchaudio=0.13.1
     - pytorch-cuda=11.8
     - pyzmq
     - numpy
     - pyyaml
     - libstdcxx-ng
     - pip:
+        - tqdm
+        - tensorboard
         - gym==0.26.2
         - pyglet==1.5.27
         - opencv-python

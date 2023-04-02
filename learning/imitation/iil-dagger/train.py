@@ -1,14 +1,20 @@
 import math
-from gym_duckietown.envs import DuckietownEnv
 import argparse
+import torch
+import os
+import sys
+
+curr_path = os.path.abspath(os.path.dirname(__file__))
+root_path = os.path.abspath(os.path.join(curr_path, '../../../'))
+duckie_path = os.path.join(root_path, 'src')
+sys.path.append(duckie_path)
+from gym_duckietown.envs import DuckietownEnv
 
 from .teacher import PurePursuitPolicy
 from .learner import NeuralNetworkPolicy
 from .model import Squeezenet
 from .algorithms import DAgger
 from .utils import MemoryMapDataset
-import torch
-import os
 
 
 def launch_env(map_name, randomize_maps_on_reset=False, domain_rand=False):

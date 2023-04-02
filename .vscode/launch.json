@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Module manual control with config-file args",
+            "type": "python",
+            "request": "launch",
+            "module": "manual_control",
+            "args": [
+                "--env-name", "Duckietown-udem1-v0",
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Python: Module train ill-dagger imitation with config-file args",
+            "type": "python",
+            "request": "launch",
+            "module": "learning.imitation.iil-dagger.train",
+            "args": [
+                "--episode", "10",
+                "--horizon", "64",
+                "--map-name", "loop_empty",
+                "--save-path", "iil_baseline",
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Python: Module test ill-dagger imitation with config-file args",
+            "type": "python",
+            "request": "launch",
+            "module": "learning.imitation.iil-dagger.test",
+            "args": [
+                "--episode", "10",
+                "--horizon", "64",
+                "--map-name", "loop_empty",
+                "--model-path", "/media/thor/Research/duckiedown/gym-duckietown/iil_baseline/model.pt",
+            ],
+            "justMyCode": true
+        },
+    ]
+}

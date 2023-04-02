@@ -1,9 +1,10 @@
+import argparse
+import os
+
 from .train import launch_env, teacher
 from .learner import NeuralNetworkPolicy
 from .model import Squeezenet
 from .algorithms import DAgger
-import argparse
-import os
 
 
 def process_args():

@@ -7,6 +7,7 @@ using the keyboard arrows.
 """
 from PIL import Image
 import argparse
+import os
 import sys
 
 import gym
@@ -14,6 +15,9 @@ import numpy as np
 import pyglet
 from pyglet.window import key
 
+root_path = os.path.abspath(os.path.dirname(__file__))
+duckie_path = os.path.join(root_path, 'src')
+sys.path.append(duckie_path)
 from gym_duckietown.envs import DuckietownEnv
 
 # from experiments.utils import save_img
