@@ -10,7 +10,8 @@
             "request": "launch",
             "module": "manual_control",
             "args": [
-                "--env-name", "Duckietown-udem1-v0",
+                "--map-name", "udem1",
+                "--max-steps", "100",
             ],
             "justMyCode": true
         },

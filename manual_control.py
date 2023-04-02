@@ -25,6 +25,7 @@ from gym_duckietown.envs import DuckietownEnv
 parser = argparse.ArgumentParser()
 parser.add_argument("--env-name", default=None)
 parser.add_argument("--map-name", default="udem1")
+parser.add_argument("--max-steps", default=1500, type=int)
 parser.add_argument("--distortion", default=False, action="store_true")
 parser.add_argument("--camera_rand", default=False, action="store_true")
 parser.add_argument("--draw-curve", action="store_true", help="draw the lane following curve")
@@ -35,10 +36,11 @@ parser.add_argument("--frame-skip", default=1, type=int, help="number of frames 
 parser.add_argument("--seed", default=1, type=int, help="seed")
 args = parser.parse_args()
 
-if args.env_name and args.env_name.find("Duckietown") != -1:
+if args.env_name is None:
     env = DuckietownEnv(
         seed=args.seed,
         map_name=args.map_name,
+        max_steps=args.max_steps,
         draw_curve=args.draw_curve,
         draw_bbox=args.draw_bbox,
         domain_rand=args.domain_rand,
