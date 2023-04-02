@@ -110,6 +110,11 @@ source activate gym-duckietown
 export PYTHONPATH="${PYTHONPATH}:`pwd`"
 ```
 
+For fixing libGL error: MESA-LOADER
+```
+conda install -c conda-forge libstdcxx-ng
+```
+
 ### Docker Image
 
 There is a pre-built Docker image available [on Docker Hub](https://hub.docker.com/r/duckietown/gym-duckietown), which also contains an installation of PyTorch.
